@@ -22,6 +22,18 @@ npx ng add @angular/material
 4- inserir no app.component.html o meu header component
 5- instalar extensao oficial do Angular: Angular Language Service
 6- importar o MatToolbarModule no header.component.ts
-7- criar componente de listagem e adicionar direto na rota (o nome do componente de rota que se usa e <router-outlet>)
+7- criar componente de listagem e adicionar direto na rota (o nome do componente de rota que se usa e <router-outlet>) // dentro deste Componente eh onde vou realizar as chamadas da API para requisicoes http
 
 *todo componente e renderizado a partir do app.component.ts, sendo assim precso inseri-lo no app.component.hmtl
+
+BACKEND: JSON Server
+fake backend (API) para consumir requisicoes https
+*criar arquivo db.json na pasta raiz e criar um json com o conteudo
+1- npm i -D json-server
+2- rodar: npx json-server db.json (vai abrir um localhost com json)
+3- no ListComponent vou consumir este json
+4- inserir o httpClient provider no app.config.ts
+5- criar um proxy para mapear a rota do endpoint (onde estiver '/api' vai ser rediredionado para o localhost:3000; caso nao fizer este redirecionamento, vai ser direcionado para a porta 4200 do servidor do angular) '/api/products' // na pasta raiza criar proxy.json.config e configurar a rota desejada
+6- no angular.json, no "serve" inserir "options" com o proxyConfig
+
+*extensao para usar no View template (e um html que renderiza conteudo dinamicamnete, ou seja, que vem do backend): Angular control flow snippets
