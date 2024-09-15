@@ -37,3 +37,8 @@ fake backend (API) para consumir requisicoes https
 6- no angular.json, no "serve" inserir "options" com o proxyConfig
 
 *extensao para usar no View template (e um html que renderiza conteudo dinamicamnete, ou seja, que vem do backend): Angular control flow snippets
+
+Refatoracao:
+1- inserir a chamada da API (ngOnInit() - arquivo list.component.ts) em um arquivo separado para trabalhar com as requisicoes http (Get/Post/Delete/Put)
+2- criar componente de servico: npm ng g s shared/services/products
+3- injetar o getAll tipando o retorno da requisicao, no caso o json do products (id, title) usando um interface
