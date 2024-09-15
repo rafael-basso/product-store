@@ -1,0 +1,24 @@
+Usar um subsystem para rodar uma distro linux (tem na microsoft store) caso seja windows
+
+instalar o nvm (node version manager): curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+seguir os passos: https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/
+
+nvm -v
+nvm ls-remote
+nvm install v18.16.0
+
+npx -p @angular/cli@17 ng new product-store --skip-tests
+Y
+stylesheet? Sass SCSS - Y
+Server side? N
+
+teminal: code <nome do projeto> para abrir no code, run npm start para iniciar o projeto
+
+1- instalar Angular Material (material para componetizacao)
+npx ng add @angular/material
+2- criar componentes: posso deixar o server running em um terminal e rodar o comando em outro // npx ng g c shared/components/header
+3- vincular o componente no app.component.ts // no arquivo do componente criado, ir no nome do export class, copiar e colar dentro do arquivo app.component.ts na parte do "imports"
+4- inserir no app.component.html o meu header component
+5- instalar extensao oficial do Angular: Angular Language Service
+6- importar o MatToolbarModule no header.component.ts
