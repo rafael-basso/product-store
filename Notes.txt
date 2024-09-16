@@ -33,7 +33,7 @@ fake backend (API) para consumir requisicoes https
 2- rodar: npx json-server db.json (vai abrir um localhost com json)
 3- no ListComponent vou consumir este json
 4- inserir o httpClient provider no app.config.ts
-5- criar um proxy para mapear a rota do endpoint (onde estiver '/api' vai ser rediredionado para o localhost:3000; caso nao fizer este redirecionamento, vai ser direcionado para a porta 4200 do servidor do angular) '/api/products' // na pasta raiza criar proxy.json.config e configurar a rota desejada
+5- criar um proxy para mapear a rota do endpoint (onde estiver '/api' vai ser rediredionado para o localhost:3000 que vem do json-server; caso nao fizer este redirecionamento, vai ser direcionado para a porta 4200 do servidor do angular) '/api/products' // na pasta raiza criar proxy.json.config e configurar a rota desejada
 6- no angular.json, no "serve" inserir "options" com o proxyConfig
 
 *extensao para usar no View template (e um html que renderiza conteudo dinamicamnete, ou seja, que vem do backend): Angular control flow snippets
@@ -42,3 +42,4 @@ Refatoracao:
 1- inserir a chamada da API (ngOnInit() - arquivo list.component.ts) em um arquivo separado para trabalhar com as requisicoes http (Get/Post/Delete/Put)
 2- criar componente de servico: npm ng g s shared/services/products
 3- injetar o getAll tipando o retorno da requisicao, no caso o json do products (id, title) usando um interface
+
