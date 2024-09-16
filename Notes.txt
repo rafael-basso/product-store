@@ -55,3 +55,5 @@ Componetizacao do card:
 **Criar link de novo produto
 1- adicionar tag <a> no list.component.html //consigo fazer requisicao para servido direto do html usando o angular snippets, neste cado o routerLink
 *posso usar estilos como o bootstrap faz, com classes padronizadas o angular material
+2- criar componente de criacao de produto que vai seu um componente de roteamento, como o list.component
+3- vincular o componete ao roteamento
