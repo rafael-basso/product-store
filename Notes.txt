@@ -43,3 +43,6 @@ Refatoracao:
 2- criar componente de servico: npm ng g s shared/services/products
 3- injetar o getAll tipando o retorno da requisicao, no caso o json do products (id, title) usando um interface
 
+**Estilizacao: posso utilizar o site do Angular Material e copiar o codigo de componetizacao
+VS CODE identacao: CRTL + SHIFT + id
+
