@@ -58,3 +58,7 @@ Componetizacao do card:
 2- criar componente de criacao de produto que vai seu um componente de roteamento, como o list.component
 3- vincular o componete ao roteamento
 4- criar a funcionalidade de "lazy loading" do angular. Isto significa fazer o carregamento de rotas de forma separada (carregamento feito por demanda, so e chamado qdo clicar no botao de link) 
+
+**Criar form dentro de create component
+1- usar diretiva FormGroup (dentro do export class CreateComponent)
+2- usar FormField do angular material (dentro do create.component.html)
