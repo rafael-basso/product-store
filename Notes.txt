@@ -46,3 +46,6 @@ Refatoracao:
 **Estilizacao: posso utilizar o site do Angular Material e copiar o codigo de componetizacao
 VS CODE identacao: CRTL + SHIFT + id
 
+Componetizacao do card:
+1- criar uma pasta dentro de features para guardar o card // qdo exportar o componente usar o input() que vai mandar um "signal" (product = input<Product>()) para recuperar no codigo html ({{ produc()?.title }})
+2- na listagem do componente de card, por cause do car ser obrigatorio - "required" preciso de <app-card [product]="product"></app-card>
