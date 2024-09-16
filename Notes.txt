@@ -57,3 +57,4 @@ Componetizacao do card:
 *posso usar estilos como o bootstrap faz, com classes padronizadas o angular material
 2- criar componente de criacao de produto que vai seu um componente de roteamento, como o list.component
 3- vincular o componete ao roteamento
+4- criar a funcionalidade de "lazy loading" do angular. Isto significa fazer o carregamento de rotas de forma separada (carregamento feito por demanda, so e chamado qdo clicar no botao de link) 
