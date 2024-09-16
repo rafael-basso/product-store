@@ -49,3 +49,9 @@ VS CODE identacao: CRTL + SHIFT + id
 Componetizacao do card:
 1- criar uma pasta dentro de features para guardar o card // qdo exportar o componente usar o input() que vai mandar um "signal" (product = input<Product>()) para recuperar no codigo html ({{ produc()?.title }})
 2- na listagem do componente de card, por cause do car ser obrigatorio - "required" preciso de <app-card [product]="product"></app-card>
+
+**extensao: Angular snippets
+
+**Criar link de novo produto
+1- adicionar tag <a> no list.component.html //consigo fazer requisicao para servido direto do html usando o angular snippets, neste cado o routerLink
+*posso usar estilos como o bootstrap faz, com classes padronizadas o angular material
