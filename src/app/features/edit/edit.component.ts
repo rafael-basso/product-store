@@ -28,7 +28,7 @@ export class EditComponent {
   
   onSubmit() {
     this.productService.editProduct(this.product.id, {
-      title: this.product.title,
+      title: this.form.controls.title.value,
       description: "sem descrição"   
     })
     .subscribe(() => {
