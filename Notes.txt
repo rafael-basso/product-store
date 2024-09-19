@@ -63,3 +63,11 @@ Componetizacao do card:
 **Criar form dentro de create component
 1- usar diretiva FormGroup (dentro do export class CreateComponent)
 2- usar FormField do angular material (dentro do create.component.html)
+
+**criar endpoint para p Post
+1- metodo post exige um payload como parametro
+2- funcionalidade do typescript: OMIT - serve para gerenciar quais propriedades vou precisar usar do payload por exemplo, um ID que não e necessario enviar na request: Omit<Product, 'id' | 'title'> // neste formato vou omitir ambos id e title da interface Product // precisa ser gerenciado por uma interface a parte
+3- tipar o metodo post - tipo ProductPayload
+4- no create.componente injetar o ProductService para usar o metodo post e passar no input do onSubmit, e gerenciar o retorno da request pelo subscribe()
+5- visualizar retorno 200 no devtools, aba network, fetch/XHR - xml httpRequest
+6- quando salvar dados no inputa da tela, vai salvar o conteuno do db.json
