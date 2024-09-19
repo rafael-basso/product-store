@@ -1,4 +1,4 @@
-Usar um subsystem para rodar uma distro linux (tem na microsoft store) caso seja windows
+Usar um subsystem para rodar uma distro linux (tem na microsoft store) caso seja windows. Neste caso, usar o prompt dentro do VC Code pelo WSL (apos clonar projeto, dar npm i para instalar)
 
 instalar o nvm (node version manager): curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
@@ -7,6 +7,7 @@ seguir os passos: https://www.freecodecamp.org/news/node-version-manager-nvm-ins
 nvm -v
 nvm ls-remote
 nvm install v18.16.0
+node -v // para ver se o node esta na mesma versao
 
 npx -p @angular/cli@17 ng new product-store --skip-tests
 Y
