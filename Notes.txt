@@ -107,3 +107,11 @@ Componetizacao do card:
     title: new FormControl<string>(this.product.title,
       { nonNullable: true, validators: Validators.required})
   });
+
+  **refatorar: criar um componente de form para reutilizar no create e no edit
+  1- criar componente form e copiar html e o form dentro do FormComponent
+  2- fazer o form receber o produto // usar  o input<>
+  3- remover todos imports do EditComponent e do CreateComponent, deixar só o FormComponent
+  4- inserir o <app-form></app-form> dentro do edit.component.html e do create.component.html, com seus devidos eventos e parametros
+  5- no editar o produto vem da rota injetada usando o snapshot()
+  6- para passar o proprio objeto como parametro no submit, usar o $event
