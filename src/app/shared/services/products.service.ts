@@ -14,9 +14,6 @@ export class ProductsService {
   }
 
   saveProduct(payload: ProductPayload) {
-    return this.httpClient.post('/api/products', payload)
-    .subscribe(() => {
-      alert('Produto salvo com sucesso!');
-    });
+    return this.httpClient.post('/api/products', payload);
   }
 }

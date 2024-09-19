@@ -71,3 +71,12 @@ Componetizacao do card:
 4- no create.componente injetar o ProductService para usar o metodo post e passar no input do onSubmit, e gerenciar o retorno da request pelo subscribe()
 5- visualizar retorno 200 no devtools, aba network, fetch/XHR - xml httpRequest
 6- quando salvar dados no inputa da tela, vai salvar o conteuno do db.json
+
+**criar feedaback ao usuario (material snack-bar) e retronar para tela anterior
+2- importar o snack-bar no create.component (MatSnackBar)
+3- para rotear a pagina de volta a pagina inicial, injetar o serviço de Router // ele tem a propriedade "NavigateByUrl" que retorna uma promise (posso usar o catch)
+
+**criar snack-bar default
+1- criar um objeto dentro do app.config (abaixo do provideHttpClient()), este por sinal é usado pelo bootStrap, por o objeto dentro de uma variavel const
+2- não esquecer de importar o mat-snack-bar config, options e o ValueProvider
+3- tirar o objeto do matSnackBAr.open do create.component
