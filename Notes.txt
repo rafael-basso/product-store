@@ -80,3 +80,10 @@ Componetizacao do card:
 1- criar um objeto dentro do app.config (abaixo do provideHttpClient()), este por sinal é usado pelo bootStrap, por o objeto dentro de uma variavel const
 2- não esquecer de importar o mat-snack-bar config, options e o ValueProvider
 3- tirar o objeto do matSnackBAr.open do create.component
+
+**criar editar produto
+1- criar componente de edição: features/edit
+2- adicionar rota para o editar produto
+3- injetar o router e o click do editar dentro do ListComponent
+4- inserir evento (edit) no <app-card></app-card> e o evento (click) no botao do card.component.hmtl, ambos com o mesmo nome de metodo onEdit()
+*dumb component: renderizam conteudo, recebem conteudo e retornam conteudo via input de forma simples // usa o @Output para isso 

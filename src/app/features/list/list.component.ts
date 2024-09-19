@@ -1,9 +1,9 @@
 // import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
-import { ProductsService} from '../../shared/services/products.service'
+import { ProductsService } from '../../shared/services/products.service'
 import { Product } from '../../shared/interfaces/product.interface';
 import { CardComponent } from './components/card/card.component';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MatButton } from '@angular/material/button';
 
 @Component({
@@ -16,10 +16,15 @@ import { MatButton } from '@angular/material/button';
 export class ListComponent {
   products: Product[] = []; // products: any[] = [];
   productsService = inject(ProductsService) //era o: httpClient = inject(HttpClient);
+  router = inject(Router);
 
   ngOnInit() {
     this.productsService.getAll().subscribe((products) => {
-        this.products = products;        
+      this.products = products;
     });
+  }
+
+  onEdit() {
+    this.router.navigateByUrl('/editar-produto');
   }
 }
