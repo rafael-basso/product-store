@@ -1,1 +1,8 @@
-<p>edit works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+        <mat-label>Titulo</mat-label>
+        <input type="text" matInput formControlName="title" placeholder="titulo">
+    </mat-form-field>
+
+    <button type="submit" mat-button mat-raised-button color="">Editar</button>
+</form>

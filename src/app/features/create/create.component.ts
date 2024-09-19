@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 })
 export class CreateComponent {
   productService = inject(ProductsService);
-  matSnackBAr = inject(MatSnackBar);
+  matSnackBar = inject(MatSnackBar);
   router = inject(Router);
 
   form = new FormGroup({
@@ -31,7 +31,7 @@ export class CreateComponent {
     })
     .subscribe(() => {
       // alert('Produto salvo com sucesso!');
-      this.matSnackBAr.open('Produto salvo com sucesso!', 'OK');
+      this.matSnackBar.open('Produto salvo com sucesso!', 'OK');
       
       // this.router.navigateByUrl('/').catch(error => alert('Erro: ' + error ));
       this.router.navigateByUrl('/');

@@ -43,6 +43,7 @@ Refatoracao:
 1- inserir a chamada da API (ngOnInit() - arquivo list.component.ts) em um arquivo separado para trabalhar com as requisicoes http (Get/Post/Delete/Put)
 2- criar componente de servico: npm ng g s shared/services/products
 3- injetar o getAll tipando o retorno da requisicao, no caso o json do products (id, title) usando um interface
+4- aqui neste serviço é onde fica os verbos http
 
 **Estilizacao: posso utilizar o site do Angular Material e copiar o codigo de componetizacao
 VS CODE identacao: CRTL + SHIFT + id
@@ -87,3 +88,22 @@ Componetizacao do card:
 3- injetar o router e o click do editar dentro do ListComponent
 4- inserir evento (edit) no <app-card></app-card> e o evento (click) no botao do card.component.hmtl, ambos com o mesmo nome de metodo onEdit()
 *dumb component: renderizam conteudo, recebem conteudo e retornam conteudo via input de forma simples // usa o @Output para isso 
+
+*verbo http PATCH posso somente editar uma propriedade de um objeto, enquanto o verbo http PUT preciso alterar o objeto todo
+
+5- copiar o from e os imports do CreateComponent para o EditComponent
+6- criar rota do PUT, inserir :id na rota do editar-produto // podemos recuperar o objeto produto que quero diretamente usando o RESOLVER
+7- importar o Observable from 'rxjs'
+
+*extendao TabNine para oferecer sugestoes, auto-complete, etc
+
+*ListComponent é um 'smart component', pois ele gerencia dados que são usados em rotamentos, chamadas de API, etc, enquanto o @Output é um 'dumb component' pois somente manipula input/output de dados. Sempre que tem um smart component vai ter um dumb component
+
+**buscar produto por ID e editar seu conteudo
+1- posso passar o produto todo como parametro dentro da listagem de cards, pois dentro do @for existe o produto (não preciso passar o produto pelo card pis ele é um dumb component, passamos parametro na view renderizada em um smart component, no caso o ListComponent)
+2- para passar o id dentro da rota, posso usar o navigate ao inves do NavigateByUrl. No navigate passo array com a rota e o id
+3- inserir servico get() para recuperar um produto
+4- injetar o produto dentro do EditComponent com snapshot, para recuperar o title e preencher no input automaticamente ao clicar em editar //form = new FormGroup({
+    title: new FormControl<string>(this.product.title,
+      { nonNullable: true, validators: Validators.required})
+  });
