@@ -148,3 +148,5 @@ por exemplo, o @for sempre renderiza um card independente se tem ou nao produto 
 products = signal<Product[]>(
     []
   );
+5- inserir o @defer(on immediate) em cada card
+6- para analisar, abrir devtools, no network em JS vai ter "chunks" e um deles mostra os componentes carregados ou naõ na tela, no caso se não houver produto cadastrado, vai carregar o no-items-component

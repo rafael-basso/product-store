@@ -19,21 +19,21 @@ import { NoItemsComponent } from './components/no-items/no-items.component';
   styleUrl: './list.component.scss'
 })
 export class ListComponent {
-  products = signal<Product[]>(
-    [inject(ActivatedRoute).snapshot.data['products']]
-  ); // era products: Product[] = [];
+  // products = signal<Product[]>(
+  //   [inject(ActivatedRoute).snapshot.data['products']]
+  // ); //descomentar se usar signal
+  products: Product[] = [];
 
   productsService = inject(ProductsService) //era httpClient = inject(HttpClient);
   router = inject(Router);
   // matDialog = inject(MatDialog);
-  
   confirmationDialog = inject(ConfirmationDialogService);
 
-  // ngOnInit() {
-  //   this.productsService.getAll().subscribe((products) => {
-  //     this.products = products;
-  //   });
-  // }
+  ngOnInit() { //comentar se usar signal
+    this.productsService.getAll().subscribe((products) => {
+      this.products = products;
+    });
+  }
 
   onEdit(product: Product) {
     this.router.navigate(['/editar-produto', product.id]);
@@ -47,8 +47,8 @@ export class ListComponent {
       this.productsService.deleteProduct(product.id).subscribe(() => {
         // console.log(`produto ${product.title} deletado`);
         this.productsService.getAll().subscribe((products) => { //ATUALIZAR LISTA
-          // this.products = products;
-          this.products.set(products);
+          this.products = products;
+          // this.products.set(products); //usado com signal
         });
       });
     });
