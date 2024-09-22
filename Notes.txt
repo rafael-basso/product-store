@@ -41,12 +41,12 @@ fake backend (API) para consumir requisicoes https
 
 Refatoracao:
 1- inserir a chamada da API (ngOnInit() - arquivo list.component.ts) em um arquivo separado para trabalhar com as requisicoes http (Get/Post/Delete/Put)
-2- criar componente de servico: npm ng g s shared/services/products
+2- criar componente de servico: npx ng g s shared/services/products
 3- injetar o getAll tipando o retorno da requisicao, no caso o json do products (id, title) usando um interface
 4- aqui neste serviço é onde fica os verbos http
 
 **Estilizacao: posso utilizar o site do Angular Material e copiar o codigo de componetizacao
-VS CODE identacao: CRTL + SHIFT + id
+VS CODE identacao: CRTL + SHIFT + i
 
 Componetizacao do card:
 1- criar uma pasta dentro de features para guardar o card // qdo exportar o componente usar o input() que vai mandar um "signal" (product = input<Product>()) para recuperar no codigo html ({{ produc()?.title }})
@@ -108,10 +108,19 @@ Componetizacao do card:
       { nonNullable: true, validators: Validators.required})
   });
 
-  **refatorar: criar um componente de form para reutilizar no create e no edit
-  1- criar componente form e copiar html e o form dentro do FormComponent
-  2- fazer o form receber o produto // usar  o input<>
-  3- remover todos imports do EditComponent e do CreateComponent, deixar só o FormComponent
-  4- inserir o <app-form></app-form> dentro do edit.component.html e do create.component.html, com seus devidos eventos e parametros
-  5- no editar o produto vem da rota injetada usando o snapshot()
-  6- para passar o proprio objeto como parametro no submit, usar o $event
+**refatorar: criar um componente de form para reutilizar no create e no edit
+2- fazer o form receber o produto // usar  o input<>
+3- remover todos imports do EditComponent e do CreateComponent, deixar só o FormComponent
+4- inserir o <app-form></app-form> dentro do edit.component.html e do create.component.html, com seus devidos eventos e parametros
+5- no editar o produto vem da rota injetada usando o snapshot()
+6- para passar o proprio objeto como parametro no submit, usar o $event
+
+**deletar um produto, mostrar modal confirmacao, deletar e atualizar lista no db.json
+1- no componente card, a entrada de dados é o <input> e a saída é o @Output, pois ele é um dumb component
+2- dentro do @for do card componente, posso escutar o evento de varias formas: (edit), (delete)
+3- inserir model de confirmação: angular material Dialog
+4- inserir outro @Component no ListComponenete para o Dialog material, inserir o template e alterar nome do export class
+* .pipe() serve como um condicional usndo o filter para avaliar a condição, se for true o proximo metodo e carregado.
+EX: .pipe(filter((response) => response === true)).subscribe() // caso response seja true, o subscribe() é acionado
+5- MatDialogRef usado para passar dados
+6- fazer endpoint para deletar a lista: inserir no prodruct.service
