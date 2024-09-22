@@ -130,3 +130,10 @@ EX: .pipe(filter((response) => response === true)).subscribe() // caso response 
 2- criar metodo de openDialog() e deixar o retorno um Observable: boolean, já que no ListComponent vou chamar este servico e o retorno boolean para usar o .pipe()
 3- tirar a responsabilidade de deletar e atualiar a lista dentro do componente de dialog e deixar no ListComponent 
 4- injetar o confirmationDialogService no ListComponent
+
+**usar API de signals
+1- carregar conteudo com Resolver e utilizar signals para substituir o ngOnInit do ListComponent (o signal facilita carregar pagina com conteudo alterado e evitar chamada ao servidor diretamente - "não pisca a tela quando deleto um produto por exemplo"). É como se fosse uma reação a alterar solicitada dentro do cliente. Antes tinha uma propriedade dentro de um array e depois tiha que computar tudo novamente, simplesmente há uma reação ao signal
+2- inserir o resolve na rota
+3- para criar a reação, usar o .set(), mudar no @for o objeto Product que agora é um signal (product())
+
+

@@ -1,5 +1,6 @@
 <a mat-button [routerLink]="['/criar-produto']" routerLinkActive="router-link-active" >Criar produto</a>
 
-@for (product of products; track product.id) {
+<!-- @for (product of products; track product.id) { -->
+ @for (product of products(); track product.id) {
     <app-card [product]="product" (edit)="onEdit(product)" (delete)="onDelete(product)"></app-card>
 }
