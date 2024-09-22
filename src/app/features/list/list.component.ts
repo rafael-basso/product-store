@@ -7,21 +7,26 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { MatButton } from '@angular/material/button';
 import { filter } from 'rxjs';
 import { ConfirmationDialogService } from '../../shared/services/confirmation-dialog.service';
+import { NoItemsComponent } from './components/no-items/no-items.component';
 
 // aqui tinha o componente do confirmar dialog
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [CardComponent, RouterLink, MatButton],
+  imports: [CardComponent, RouterLink, MatButton, NoItemsComponent],
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss'
 })
 export class ListComponent {
-  products = signal<Product[]>(inject(ActivatedRoute).snapshot.data['products']); // ero products: Product[] = [];
+  products = signal<Product[]>(
+    [inject(ActivatedRoute).snapshot.data['products']]
+  ); // era products: Product[] = [];
+
   productsService = inject(ProductsService) //era httpClient = inject(HttpClient);
   router = inject(Router);
   // matDialog = inject(MatDialog);
+  
   confirmationDialog = inject(ConfirmationDialogService);
 
   // ngOnInit() {
