@@ -136,4 +136,5 @@ EX: .pipe(filter((response) => response === true)).subscribe() // caso response 
 2- inserir o resolve na rota
 3- para criar a reação, usar o .set(), mudar no @for o objeto Product que agora é um signal (product())
 
-
+**criar pasta para guardar os Resolvers que estão no roteamento
+1- dentro do arquivo de resolve, inserir cada resolve exportanto como uma function
