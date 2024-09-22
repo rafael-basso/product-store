@@ -124,3 +124,9 @@ Componetizacao do card:
 EX: .pipe(filter((response) => response === true)).subscribe() // caso response seja true, o subscribe() é acionado
 5- MatDialogRef usado para passar dados
 6- fazer endpoint para deletar a lista: inserir no prodruct.service
+
+**Criar serviço de dialog confirmation
+1- extrair o componente e o ConfirmationDialogComponent de dialog do ListComponent para o novo servico de confirmacao do dialog //colar logo abaixo do import e antes do @Injectable
+2- criar metodo de openDialog() e deixar o retorno um Observable: boolean, já que no ListComponent vou chamar este servico e o retorno boolean para usar o .pipe()
+3- tirar a responsabilidade de deletar e atualiar a lista dentro do componente de dialog e deixar no ListComponent 
+4- injetar o confirmationDialogService no ListComponent
