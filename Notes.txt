@@ -1,4 +1,4 @@
-Usar um subsystem para rodar uma distro linux (tem na microsoft store) caso seja windows. Neste caso, usar o prompt dentro do VC Code pelo WSL (apos clonar projeto, dar npm i para instalar)
+Usar um subsystem para rodar uma distro linux (tem na microsoft store) caso seja windows. Neste caso, usar o prompt dentro do VC Code pelo WSL ou bash (apos clonar projeto, dar npm i para instalar)
 
 instalar o nvm (node version manager): curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
@@ -155,3 +155,8 @@ products = signal<Product[]>(
 1- criar <a> no create.component.html
 2- usar propriedade [routerLink]="['/']" na tag <a>
 3- inseri o RouterLink dentro do imports do create.component.ts 
+
+**RODAR FAKE DB:
+npx json-server db.json
+**RODAR PROJETO:
+npm start
