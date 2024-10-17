@@ -1,4 +1,4 @@
-Usar um subsystem para rodar uma distro linux (tem na microsoft store) caso seja windows. Neste caso, usar o prompt dentro do VC Code pelo WSL ou bash (apos clonar projeto, dar npm i para instalar)
+Usar um subsystem para rodar uma distro linux (tem na microsoft store) caso seja windows. Neste caso, usar o prompt dentro do VS Code pelo WSL ou bash (apos clonar projeto, dar npm i para instalar)
 
 instalar o nvm (node version manager): curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
@@ -34,7 +34,7 @@ fake backend (API) para consumir requisicoes https
 2- rodar: npx json-server db.json (vai abrir um localhost com json)
 3- no ListComponent vou consumir este json
 4- inserir o httpClient provider no app.config.ts
-5- criar um proxy para mapear a rota do endpoint (onde estiver '/api' vai ser rediredionado para o localhost:3000 que vem do json-server; caso nao fizer este redirecionamento, vai ser direcionado para a porta 4200 do servidor do angular) '/api/products' // na pasta raiza criar proxy.json.config e configurar a rota desejada
+5- criar um proxy para mapear a rota do endpoint (onde estiver '/api' vai ser rediredionado para o localhost:3000 que vem do json-server; caso nao fizer este redirecionamento, vai ser direcionado para a porta 4200 do servidor do angular) '/api/products' // na pasta raiz criar proxy.json.config e configurar a rota desejada
 6- no angular.json, no "serve" inserir "options" com o proxyConfig
 
 *extensao para usar no View template (e um html que renderiza conteudo dinamicamnete, ou seja, que vem do backend): Angular control flow snippets
@@ -59,7 +59,7 @@ Componetizacao do card:
 *posso usar estilos como o bootstrap faz, com classes padronizadas o angular material
 2- criar componente de criacao de produto que vai seu um componente de roteamento, como o list.component
 3- vincular o componete ao roteamento
-4- criar a funcionalidade de "lazy loading" do angular. Isto significa fazer o carregamento de rotas de forma separada (carregamento feito por demanda, so e chamado qdo clicar no botao de link) 
+4- criar a funcionalidade de "lazy loading" do angular. Isto significa fazer o carregamento de rotas de forma separada (carregamento feito por demanda, so e chamado qdo clicar no botao de link) - conceito de SPA (single page application)
 
 **Criar form dentro de create component
 1- usar diretiva FormGroup (dentro do export class CreateComponent)
@@ -71,16 +71,33 @@ Componetizacao do card:
 3- tipar o metodo post - tipo ProductPayload
 4- no create.componente injetar o ProductService para usar o metodo post e passar no input do onSubmit, e gerenciar o retorno da request pelo subscribe()
 5- visualizar retorno 200 no devtools, aba network, fetch/XHR - xml httpRequest
-6- quando salvar dados no inputa da tela, vai salvar o conteuno do db.json
+6- quando salvar dados no input da tela, vai salvar o conteuno do db.json
 
-**criar feedaback ao usuario (material snack-bar) e retronar para tela anterior
+**diferença de interface e type: o interface é estensível, ou seja, posso adicionar propriedades. Já o type não pode ser extendido, ou seja, não posso adicionar propriedades depois de criado:
+EX:
+interface BirdInterface {
+  wings: 2;
+}
+interface BirdInterface {
+  beak: string;
+}
+
+type BirdType = {
+  wings: 2;
+};
+// Error: Duplicate identifier 'BirdType'.
+type BirdType = {
+  beak: string;
+};
+
+**criar feedaback ao usuario (material snack-bar) e retornar para tela anterior
 2- importar o snack-bar no create.component (MatSnackBar)
 3- para rotear a pagina de volta a pagina inicial, injetar o serviço de Router // ele tem a propriedade "NavigateByUrl" que retorna uma promise (posso usar o catch)
 
 **criar snack-bar default
-1- criar um objeto dentro do app.config (abaixo do provideHttpClient()), este por sinal é usado pelo bootStrap, por o objeto dentro de uma variavel const
+1- criar um objeto dentro do app.config (abaixo do provideHttpClient()), este por sinal é usado pelo bootstrap, colocar o objeto dentro de uma variavel const
 2- não esquecer de importar o mat-snack-bar config, options e o ValueProvider
-3- tirar o objeto do matSnackBAr.open do create.component
+3- tirar o objeto do matSnackBar.open do create.component
 
 **criar editar produto
 1- criar componente de edição: features/edit
@@ -100,7 +117,7 @@ Componetizacao do card:
 *ListComponent é um 'smart component', pois ele gerencia dados que são usados em rotamentos, chamadas de API, etc, enquanto o @Output é um 'dumb component' pois somente manipula input/output de dados. Sempre que tem um smart component vai ter um dumb component
 
 **buscar produto por ID e editar seu conteudo
-1- posso passar o produto todo como parametro dentro da listagem de cards, pois dentro do @for existe o produto (não preciso passar o produto pelo card pis ele é um dumb component, passamos parametro na view renderizada em um smart component, no caso o ListComponent)
+1- posso passar o produto todo como parametro dentro da listagem de cards, pois dentro do @for existe o produto (não preciso passar o produto pelo card pois ele é um dumb component, passamos parametro na view renderizada em um smart component, no caso o ListComponent)
 2- para passar o id dentro da rota, posso usar o navigate ao inves do NavigateByUrl. No navigate passo array com a rota e o id
 3- inserir servico get() para recuperar um produto
 4- injetar o produto dentro do EditComponent com snapshot, para recuperar o title e preencher no input automaticamente ao clicar em editar //form = new FormGroup({
@@ -119,7 +136,7 @@ Componetizacao do card:
 1- no componente card, a entrada de dados é o <input> e a saída é o @Output, pois ele é um dumb component
 2- dentro do @for do card componente, posso escutar o evento de varias formas: (edit), (delete)
 3- inserir model de confirmação: angular material Dialog
-4- inserir outro @Component no ListComponenete para o Dialog material, inserir o template e alterar nome do export class
+4- inserir outro @Component no ListComponent para o Dialog material, inserir o template e alterar nome do export class
 * .pipe() serve como um condicional usndo o filter para avaliar a condição, se for true o proximo metodo e carregado.
 EX: .pipe(filter((response) => response === true)).subscribe() // caso response seja true, o subscribe() é acionado
 5- MatDialogRef usado para passar dados

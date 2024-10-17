@@ -1,14 +1,14 @@
 {
-    "products": [
-        {
-            "id": "1",
-            "title": "primeiro produto",
-            "description": "descricao do primeiro produto"
-        },
-        {
-            "id": "2",
-            "title": "segundo produto",
-            "description": "descricao do segundo produto"
-        }
-    ]
+  "products": [
+    {
+      "id": "1",
+      "title": "primeiro produto",
+      "description": "descricao do primeiro produto"
+    },
+    {
+      "id": "2",
+      "title": "segundo produto",
+      "description": "descricao do segundo produto"
+    }
+  ]
 }

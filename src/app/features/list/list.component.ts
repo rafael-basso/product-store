@@ -29,7 +29,8 @@ export class ListComponent {
   // matDialog = inject(MatDialog);
   confirmationDialog = inject(ConfirmationDialogService);
 
-  ngOnInit() { //comentar se usar signal
+  //comentar se usar signal
+  ngOnInit() {
     this.productsService.getAll().subscribe((products) => {
       this.products = products;
     });

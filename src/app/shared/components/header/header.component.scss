@@ -1,3 +1,12 @@
-p {
-    color: #FFFFFF;
+mat-card {
+    width: fit-content;
+    margin: 10px 0;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
 }
+
+a {
+    color: gray;
+    text-decoration: none;
+ }
